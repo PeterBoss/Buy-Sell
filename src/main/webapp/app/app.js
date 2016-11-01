@@ -11,6 +11,8 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.view3',
   'myApp.view4',
+  'myApp.view_documentation',
+  'myApp.view_exchangerate',
   'myApp.filters',
   'myApp.directives',
   'myApp.factories',
