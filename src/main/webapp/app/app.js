@@ -12,6 +12,7 @@ angular.module('myApp', [
   'myApp.view3',
   'myApp.view4',
   'myApp.view_documentation',
+  'myApp.view_registration',
   'myApp.view_exchangerate',
   'myApp.filters',
   'myApp.directives',
