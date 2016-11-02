@@ -8,9 +8,11 @@ angular.module('myApp.view_registration', ['ngRoute'])
                     controllerAs: 'ctrl'
                 });
             }])
-        .controller('AppRegistrationController', function ($scope) {
+        .controller('AppRegistrationController', function ($scope, $http, $location) {
             $scope.register = function () {
-                console.log("TESTING REGISTRATION");
-                console.log($scope.user);
+                $http.put('api/registration', $scope.user)
+                        .success(function () {
+                            $location.path("#/view1");
+                        });
             };
         });
