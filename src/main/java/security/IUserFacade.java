@@ -20,7 +20,7 @@ public interface IUserFacade {
     List<String> authenticateUser(String userName, String password);
 
     IUser getUserByUserId(String id);
-
+    List<IUser> getUsers();
 
     void createUser(String name, String pw);
 

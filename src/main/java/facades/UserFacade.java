@@ -3,12 +3,14 @@ package facades;
 import entity.Role;
 import security.IUserFacade;
 import entity.User;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import security.IUser;
 import security.PasswordStorage;
 
@@ -52,13 +54,12 @@ public class UserFacade implements IUserFacade {
     public void createUser(String name, String pw) {
         EntityManager em = getEntityManager();
         try {
-                em.getTransaction().begin();
-                User user = new User(name, pw);
-                Role role = new Role("User");
-                user.addRole(role);
-                em.persist(role);
-                em.persist(user);
-                em.getTransaction().commit();
+            em.getTransaction().begin();
+            User user = new User(name, pw);
+            Role role = new Role("User");
+            user.addRole(role);
+            em.persist(user);
+            em.getTransaction().commit();
         } catch (Exception ex) {
             Logger.getLogger(UserFacade.class.getName()).log(Level.SEVERE, null, ex);
             em.getTransaction().rollback();
@@ -66,6 +67,17 @@ public class UserFacade implements IUserFacade {
             em.close();
         }
 
+    }
+
+    @Override
+    public List<IUser> getUsers() {
+        EntityManager em = getEntityManager();
+
+        Query query = em.createQuery("SELECT e from SEED_USER e");
+
+        List<IUser> users = (List<IUser>) query.getResultList();
+        em.close();
+        return users;
     }
 
 }
