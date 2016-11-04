@@ -1,22 +1,20 @@
 'use strict';
 
-angular.module('myApp.view3', ['ngRoute'])
+angular.module('myApp.view_allusers', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view3', {
-    templateUrl: 'app/view3/view3.html',
-    controller: 'View3Ctrl'
+  $routeProvider.when('/view_allusers', {
+    templateUrl: 'app/view_allusers/view_allusers.html',
+    controller: 'View_allusersCtrl'
   });
 }])
 
-.controller('View3Ctrl', function($http,$scope) {
-  $http.get('api/demoadmin')
+.controller('View_allusersCtrl', function($http,$scope) {
+  $http.get('api/demoadmin/users')
             .success(function (data, status, headers, config) {
               $scope.data = data;
             })
             .error(function (data, status, headers, config) {
               
              });
-     console.log("hej");
- 
 });
