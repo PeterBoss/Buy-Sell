@@ -46,8 +46,9 @@ public class Admin {
     @Path("delete/{id}")
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
-    public void deleteUser(@PathParam("id") int id){
+    public void deleteUser(@PathParam("id") String id){
         UserFacade fac = new UserFacade(Persistence.createEntityManagerFactory("pu_development"));
-      //  fac.getUserByUserId(id);
+        fac.getUserByUserId(id);
+        
     }
 }
