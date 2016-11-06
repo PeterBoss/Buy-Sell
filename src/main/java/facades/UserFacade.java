@@ -68,6 +68,25 @@ public class UserFacade implements IUserFacade {
         }
 
     }
+    
+    @Override
+    public void createAdmin(String name, String pw) {
+        EntityManager em = getEntityManager();
+        try {
+            em.getTransaction().begin();
+            User user = new User(name, pw);
+            Role role = new Role("Admin");
+            user.addRole(role);
+            em.persist(user);
+            em.getTransaction().commit();
+        } catch (Exception ex) {
+            Logger.getLogger(UserFacade.class.getName()).log(Level.SEVERE, null, ex);
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+
+    }
 
     @Override
     public List<IUser> getUsers() {

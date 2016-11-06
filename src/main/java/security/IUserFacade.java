@@ -23,5 +23,6 @@ public interface IUserFacade {
     List<IUser> getUsers();
 
     void createUser(String name, String pw);
+    void createAdmin(String name, String pw);
 
 }
