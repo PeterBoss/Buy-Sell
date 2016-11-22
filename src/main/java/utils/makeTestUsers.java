@@ -14,7 +14,7 @@ public class makeTestUsers {
   //Run this file to setup the users required to use the initial version of the seed
   public static void main(String[] args) {
       System.out.println("trin1 ");
-    EntityManager em = Persistence.createEntityManagerFactory("pu_development").createEntityManager();
+    EntityManager em = Persistence.createEntityManagerFactory("buysell").createEntityManager();
     try {
       System.out.println("Creating TEST Users");
       if (em.find(User.class, "user") == null) {
