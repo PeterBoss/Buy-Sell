@@ -59,7 +59,7 @@ public class Registration {
         String username = json.get("username").getAsString();
         String password = json.get("password").getAsString();
         
-        UserFacade fac = new UserFacade(Persistence.createEntityManagerFactory("pu_development"));
+        UserFacade fac = new UserFacade(Persistence.createEntityManagerFactory("buysell"));
         
         fac.createUser(username, password);
         
