@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 public class createUser {
 
     public static void main(String[] args) {
-        UserFacade fac = new UserFacade(Persistence.createEntityManagerFactory("pu_development"));
+        UserFacade fac = new UserFacade(Persistence.createEntityManagerFactory("buysell"));
     }
     
 }
