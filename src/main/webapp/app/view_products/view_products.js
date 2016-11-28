@@ -12,7 +12,7 @@ angular.module('myApp.view_products', ['ngRoute'])
 
         .controller("ProductsController", ["$scope", "$http", function ($scope, $http) {
                 $scope.submit = function () {
-                    if ($scope.cvrInput) {
+                    if ($scope.MODELinput) {
                         var req = {
                             method: 'GET',
                             skipAuthorization: true,
@@ -24,7 +24,7 @@ angular.module('myApp.view_products', ['ngRoute'])
                             $scope.unitData = response.data.productionunits;
                         });
                     } else {
-                        alert("Please enter cvr");
+                        alert("Please enter MODEL");
                     }
                 };
 
