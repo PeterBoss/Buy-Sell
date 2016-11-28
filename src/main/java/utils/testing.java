@@ -14,7 +14,7 @@ import security.IUser;
 public class testing {
 
     public static void main(String[] args) {
-        UserFacade fac = new UserFacade(Persistence.createEntityManagerFactory("pu_development"));
+        UserFacade fac = new UserFacade(Persistence.createEntityManagerFactory("buysell"));
         
         List<IUser> users = fac.getUsers();
         
