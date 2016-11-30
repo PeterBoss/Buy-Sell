@@ -5,6 +5,7 @@
  */
 package rest;
 
+import com.google.gson.Gson;
 import ebay.Ebay;
 import java.io.IOException;
 import javax.ws.rs.core.Context;
@@ -41,7 +42,7 @@ public class EbayRest {
      * @throws java.io.IOException
      */
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("{keyword}")
     public String getXml(@PathParam("keyword") String keyword) throws IOException {
 
@@ -49,7 +50,12 @@ public class EbayRest {
         
         System.out.println("tests");
         
-        return ebay.findByKeywords(keyword);
+        Gson gson = new Gson();
+        String result = gson.toJson(ebay.findByKeywords(keyword));
+        
+        System.out.println(result);
+        
+        return result;
 
     }
 
