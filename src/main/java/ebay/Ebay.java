@@ -18,14 +18,18 @@ import java.net.URL;
  */
 public class Ebay {
 
-    public String sendGet() throws MalformedURLException, IOException {
-        String url = "http://svcs.ebay.com/services/search/FindingService/"
+    public String findByKeywords(String keywords) throws MalformedURLException, IOException {
+        String str = "http://svcs.ebay.com/services/search/FindingService/"
                 + "v1?OPERATION-NAME=findItemsByKeywords"
                 + "&SERVICE-VERSION=1.0.0"
                 + "&SECURITY-APPNAME=PeterTho-test1-PRD-f45f6444c-eaec4193"
                 + "&RESPONSE-DATA-FORMAT=XML"
                 + "&REST-PAYLOAD"
-                + "&keywords=xbox";
+                + "&keywords=";
+        
+        StringBuilder builder = new StringBuilder(str);
+        builder.append(keywords);
+        String url = builder.toString();
 
         URL obj = new URL(url);
         
@@ -36,7 +40,7 @@ public class Ebay {
         con.setRequestProperty("User-Agent", "");
         
         int responseCode = con.getResponseCode();
-        
+        System.out.println(responseCode);
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
         StringBuilder response = new StringBuilder();

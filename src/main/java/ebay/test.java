@@ -19,6 +19,7 @@ public class test {
      */
     public static void main(String[] args) throws IOException {
         Ebay test = new Ebay();
+        System.out.println(test.findByKeywords("playstation"));
         
     }
     
