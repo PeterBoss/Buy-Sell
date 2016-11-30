@@ -27,9 +27,10 @@ public class ApplicationConfig extends Application {
     resources.add(rest.All.class);
     resources.add(rest.EbayRest.class);
     resources.add(rest.User.class);
+    resources.add(rest.dba.class);
     resources.add(security.JWTAuthenticationFilter.class);
     resources.add(security.Login.class);
-    resources.add(security.NotAuthorizedExceptionMapper.class);
+        resources.add(security.NotAuthorizedExceptionMapper.class);
         resources.add(security.Registration.class);
         resources.add(security.RolesAllowedFilter.class);
    
