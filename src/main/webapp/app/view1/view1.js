@@ -20,7 +20,8 @@ angular.module('myApp.view1', ['ngRoute'])
             $scope.myFunc = function () {
                 $http.get('api/ebaysearch/' + $scope.keyword)
                         .then(function (response) {
-                            console.log(response.data.indexOf("version"));
+                            var t = JSON.parse(response.data);
+                            console.log(t.findItemsByKeywordsResponse[0].searchResult[0].item[0].title[0]);
 
                         });
             };
