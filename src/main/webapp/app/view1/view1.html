@@ -2,4 +2,9 @@ Search for your item<br>
 <div ng-controller="ebayCtrl" >
 <input ng-model="keyword" type="text" name="Search" id="SearchField" value="" style="width: 40%;" />
 <input type="submit" value="searchButton" ng-click="myFunc()"/>
+<ul ng-repeat="n in ebayItems">
+    <li>{{n}}</li>
+    
+</ul>
+
 </div>

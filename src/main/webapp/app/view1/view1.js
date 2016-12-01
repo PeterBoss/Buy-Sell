@@ -14,15 +14,17 @@ angular.module('myApp.view1', ['ngRoute'])
                 this.msgFromFactory = InfoFactory.getInfo();
                 this.msgFromService = InfoService.getInfo();
             }])
-           
 
-        .controller('ebayCtrl',  function ($scope, $http) {
+
+        .controller('ebayCtrl', function ($scope, $http) {
             $scope.myFunc = function () {
                 $http.get('api/ebaysearch/' + $scope.keyword)
                         .then(function (response) {
                             var t = JSON.parse(response.data);
-                            console.log(t.findItemsByKeywordsResponse[0].searchResult[0].item[0].title[0]);
-
+                            for (var i = 0; i < 10; i++) {
+                                $scope.ebayItems = t.findItemsByKeywordsResponse[0].searchResult[0].item[i];
+                            }
+                            console.log($scope.ebayItems);
                         });
             };
         });
