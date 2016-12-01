@@ -23,7 +23,7 @@ public class Ebay {
                 + "v1?OPERATION-NAME=findItemsByKeywords"
                 + "&SERVICE-VERSION=1.0.0"
                 + "&SECURITY-APPNAME=PeterTho-test1-PRD-f45f6444c-eaec4193"
-                + "&RESPONSE-DATA-FORMAT=XML"
+                + "&RESPONSE-DATA-FORMAT=JSON"
                 + "&REST-PAYLOAD"
                 + "&keywords=";
         
