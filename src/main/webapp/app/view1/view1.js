@@ -21,10 +21,8 @@ angular.module('myApp.view1', ['ngRoute'])
                 $http.get('api/ebaysearch/' + $scope.keyword)
                         .then(function (response) {
                             var t = JSON.parse(response.data);
-                            for (var i = 0; i < 10; i++) {
-                                $scope.ebayItems = t.findItemsByKeywordsResponse[0].searchResult[0].item[i];
-                            }
-                            console.log($scope.ebayItems);
+                            $scope.ebayItems = t.findItemsByKeywordsResponse[0].searchResult[0].item;
+
                         });
             };
         });
