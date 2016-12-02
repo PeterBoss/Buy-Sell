@@ -22,7 +22,8 @@ angular.module('myApp.view1', ['ngRoute'])
                         .then(function (response) {
                             var t = JSON.parse(response.data);
                             $scope.ebayItems = t.findItemsByKeywordsResponse[0].searchResult[0].item;
-
+                            console.log(t.findItemsByKeywordsResponse[0].searchResult[0].item[0].sellingStatus[0]
+                                    .currentPrice[0].__value__);
                         });
             };
         });
