@@ -1,8 +1,8 @@
-Search for your item
+Search For Your Item
 <br>
 <div ng-controller="ebayCtrl" >
     <input ng-model="keyword" type="text" name="Search" id="SearchField" value="" style="width: 40%;" />
-    <input type="submit" value="searchButton" ng-click="myFunc()"/>
+    <input type="submit" value="Search" ng-click="myFunc()"/>
     <ul ng-repeat="n in ebayItems">
         <li> 
             <a href="{{n.viewItemURL[0]}}">{{n.title}}</a>{{n.sellingStatus.currentPrice}}

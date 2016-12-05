@@ -20,8 +20,8 @@ public class LoginTest{
      UserFacade fac = new UserFacade(Persistence.createEntityManagerFactory("buysell"));
         
         List<IUser> users = fac.getUsers();
-        String a = "abe";
-        String b = "sha1:64000:18:MbevnM6DYZBvpkhTa2m8m363804m/zjh:fYwBgB1hjDZIU+OUuX9LahMc";
+        String a = "admin";
+        String b = "sha1:64000:18:9YAdHDfLVnrgRuOUrDqnx7asq+5G08gr:9gN269tkv6ckukPb+A3wslRO";
 
         User user = (User) users.get(0);
         System.out.println(user.getUserName());

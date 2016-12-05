@@ -1,16 +1,51 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div class="container">
+    <div>
+        <div>
+            <h3>Find Company Information</h3>
+            <form ng-submit="submit()">
+                <div>
+                    Search Text: 
+                    <input placeholder="Required" type="text" ng-model="MODELinput" name="text" />
+                </div>
+                <div>
+                    Options 
+                    <select>
+                        <option>CVR</option>
+                    </select>
+                </div>
+
+                <div>
+                    <input type="submit" id="submit" value="Search" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Company</h3>
+                <table class="table">
+                    <!--<tr ng-repeat="(key, value) in data">
+                        <td width="50" class="text-primary">{{key}}</td>
+                        <td width="100">{{value}}</td>
+                    </tr> -->
+                    <tr>
+                        <td>Name</td>
+                        <td>{{data.MODEL}}</td>
+                    </tr>
+                    <tr>
+                        <td>CVR</td>
+                        <td>{{data.BY}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>{{data.PRIS}}</td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
