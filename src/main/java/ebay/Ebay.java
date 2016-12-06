@@ -32,7 +32,7 @@ public class Ebay {
         String[] individualWords = keywords.split(" ");
         
         for (String word : individualWords) {
-            builder.append(word);
+            builder.append(word + "+");
         }
         
         String url = builder.toString();
