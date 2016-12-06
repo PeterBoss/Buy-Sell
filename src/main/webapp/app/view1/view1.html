@@ -5,7 +5,7 @@ Search For Your Item In Ebay
     <input type="submit" value="Search" ng-click="myFunc()"/>
     <ul ng-repeat="n in ebayItems">
         <li> 
-            <a href="{{n.viewItemURL[0]}}">{{n.title}}</a>{{n.sellingStatus[0].currentPrice[0]['__value__']}}
+      <img src="{{n.galleryURL[0]}}" alt="product pic" style="width:150px;height:100px;">  <a href="{{n.viewItemURL[0]}}">{{n.title}}</a>   {{n.sellingStatus[0].currentPrice[0]['__value__'] + "$"}}
         </li>
 
     </ul>
