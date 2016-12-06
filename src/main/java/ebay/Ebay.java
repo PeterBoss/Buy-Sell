@@ -28,7 +28,13 @@ public class Ebay {
                 + "&keywords=";
         
         StringBuilder builder = new StringBuilder(str);
-        builder.append(keywords);
+        
+        String[] individualWords = keywords.split(" ");
+        
+        for (String word : individualWords) {
+            builder.append(word);
+        }
+        
         String url = builder.toString();
 
         URL obj = new URL(url);
